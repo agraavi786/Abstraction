@@ -1,2 +1,94 @@
 # Abstraction
-fd
+//Create a class called GeneralBank that acts as base class for
+//all banks. This class has getSavingsInterestRate and
+//getFixedDepositInterestRate methods, which returns the savings
+//account interest rate and fixed deposit account interest rate
+//that the specific bank gives. Since GeneralBank cannot say what
+//percentage which bank would give, make these methods abstract.
+//Create two subclasses of GeneralBank called ICICIBank and
+//KotMBank. Override the inherited methods from the base class.
+//The following are the interest rates of these banks.
+//ICICIBank - Savings 4% Fixed 8.5% and
+//KotMBank - Savings 6% Fixed 9%.
+//Create a main method to test the above classes and their
+//methods. Try one by one and observe your findings
+//a) ICICIBank i=new ICICIBank();
+//Abstract
+//Classes
+//b) KotMBank k=new KotMBank();
+//c) GeneralBank g=new KotMBank();
+//d) GeneralBank g=new ICICIBank();
+
+
+
+
+package abstractClass;
+
+public class mainClass {
+	
+		
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		iciciBank ic = new iciciBank();
+		System.out.println("ICICIBank  - Saving is :" + ic.getSavingIntrestrate() + "% " + "Fixed " + ic.getFixedDepositeIntrestRate() + "%");
+		kotakMBank b= new kotakMBank();
+		System.out.println("KotakMBank - Saving is :" + b.getSavingIntrestrate() + "% " + "Fixed " + b.getFixedDepositeIntrestRate() + "%");
+		
+		generalBank gb = new kotakMBank();
+		System.out.println("GenerakBank - Saving is :" + gb.getSavingIntrestrate() + "% " + "Fixed " + gb.getFixedDepositeIntrestRate() + "%");
+		generalBank gb2 = new iciciBank();
+		//gb2.getFixedDepositeIntrestRate();
+		System.out.println("GenerakBank2 - Saving is :" + gb2.getSavingIntrestrate() + "% " + "Fixed " + gb2.getFixedDepositeIntrestRate() + "%");
+		
+		
+		//ic.getFixedDepositeIntrestRate();
+		//ic.getFixedDepositeIntrestRate();
+		
+		
+
+	}
+
+}
+
+
+public abstract class generalBank {
+	
+	abstract double getSavingIntrestrate();
+	
+	 abstract double getFixedDepositeIntrestRate();	
+		
+		
+	}
+  
+ public class iciciBank  extends generalBank{
+
+	@Override
+	double getSavingIntrestrate() {
+		return 4;
+	}
+
+	@Override
+	double getFixedDepositeIntrestRate() {
+		return 8.5;
+	}
+	
+	
+}
+
+public class kotakMBank extends generalBank {
+
+	@Override
+	double getSavingIntrestrate() {
+		return 6;
+	}
+
+	@Override
+	double getFixedDepositeIntrestRate() {
+		return 9;
+	}
+	
+	
+}
